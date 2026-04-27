@@ -1,0 +1,65 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(#020617, #0f172a);
+  overflow: hidden;
+}
+
+/* card */
+.card {
+  width: 500px;
+  height: 300px;
+  position: relative;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transition: 1s;
+}
+
+.front, .inside {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backface-visibility: hidden;
+  text-align: center;
+  padding: 20px;
+}
+
+.front {
+  background: linear-gradient(pink, #ff4fd8);
+  color: white;
+}
+
+.inside {
+  background: #111827;
+  color: white;
+  transform: rotateY(180deg);
+  flex-direction: column;
+}
+
+.open {
+  transform: rotateY(180deg);
+}
+
+/* hearts & flowers */
+.effect {
+  position: absolute;
+  animation: float 8s linear infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-800px);
+    opacity: 0;
+  }
+}
